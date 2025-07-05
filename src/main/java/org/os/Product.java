@@ -10,18 +10,17 @@ public class Product {
     private boolean shippable;
     private double weight;
 
-    private boolean expirable;
+
     private LocalDate expiryDate;
 
     public Product(String name, double price, int quantity,
                    boolean shippable, double weight,
-                   boolean expirable, LocalDate expiryDate) {
+                    LocalDate expiryDate) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.shippable = shippable;
         this.weight = weight;
-        this.expirable = expirable;
         this.expiryDate = expiryDate;
     }
 
@@ -49,11 +48,7 @@ public class Product {
         return weight;
     }
 
-    public boolean isExpirable() {
-        return expirable;
-    }
-
     public boolean isExpired() {
-        return expirable && expiryDate != null && expiryDate.isBefore(LocalDate.now());
+        return expiryDate != null && expiryDate.isBefore(LocalDate.now());
     }
 }

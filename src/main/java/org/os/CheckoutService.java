@@ -18,7 +18,7 @@ public class CheckoutService {
             Product product = item.product;
             int qty = item.quantity;
 
-            if (product.isExpirable() && product.isExpired()) {
+            if (product.isExpired()) {
                 throw new RuntimeException("Cannot checkout: " + product.getName() + " is expired");
             }
 

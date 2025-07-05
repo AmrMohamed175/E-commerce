@@ -21,9 +21,9 @@ public class ShippingService {
         for (String name : countMap.keySet()) {
             int count = countMap.get(name);
             double weight = weightMap.get(name) * count;
-            System.out.println(count + "x " + name + " " + String.format("%.1f", weight) + "kg");
+            System.out.println(count + "x " + name + " " + weight + "kg");
         }
 
-        System.out.printf("Total package weight %.1fkg%n%n", totalWeight);
+        System.out.println("Total package weight " + totalWeight + "kg\n");
     }
 }
